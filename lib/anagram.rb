@@ -6,6 +6,13 @@ class Anagram
     @name = word
   end
 
-  def match
+  def match(array)
+    match_array = []
+    array.each do |new_anagram|
+      if new_anagram.split(", ").sort == @name.split(", ").sort
+        new_anagram << match_array
+      end
+    end
+    match_array
   end
 end
